@@ -1,6 +1,7 @@
-package user.crud.userDAO;
+package user.crud.dao;
 
 import user.crud.model.User;
+
 
 import java.util.List;
 
@@ -9,4 +10,5 @@ public interface UserDAO {
     void save(User user);
     void delete(User user);
     User getById(Long id);
+    User getUserByName(String username);
 }

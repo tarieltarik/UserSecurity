@@ -1,4 +1,4 @@
-package user.crud.userDAO;
+package user.crud.dao;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,5 +39,17 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public User getById(Long id) {
         return entityManager.find(User.class, id);
+    }
+
+    @Override
+    public User getUserByName(String username) {
+        try {
+            User user = entityManager.createQuery("SELECT u FROM User u where u.name = :name", User.class)
+                    .setParameter("name", username)
+                    .getSingleResult();
+            return user;
+        } catch (NoResultException ex) {
+            return null;
+        }
     }
 }
