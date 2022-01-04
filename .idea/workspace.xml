@@ -11,36 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="69e613ee-b285-4e3e-bad1-ff9950426d82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/classes/user/crud/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/classes/user/crud/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/classes/user/crud/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/classes/user/crud/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/classes/user/crud/userDAO/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/classes/user/crud/userDAO/UserDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/classes/user/crud/userService/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/classes/user/crud/userService/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/ST4-4.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/antlr-runtime-3.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/antlr4-4.9.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/antlr4-runtime-4.9.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/byte-buddy-1.10.21.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/hibernate-commons-annotations-5.1.2.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/hibernate-core-6.0.0.Alpha8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/icu4j-61.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/jandex-2.2.3.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/javax.json-1.0.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/jboss-logging-3.4.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/jcommander-1.78.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/jquery-3.5.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/mysql-connector-java-8.0.27.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/org.abego.treelayout.core-1.0.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/spring-jdbc-5.3.14.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/spring-orm-5.3.14.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/spring-tx-5.3.14.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/lib/testng-7.4.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/pages/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/pages/addUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/user/crud/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/crud/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/user/crud/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/crud/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/user/crud/userDAO/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/user/crud/userDAO/UserDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/user/crud/userService/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/crud/userService/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/Spring_MVC/WEB-INF/classes/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +61,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -149,7 +127,7 @@
       <recent name="D:\JavaKata\JavaKataProjects\UserCRUD\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.501">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="user.crud.Main" />
       <module name="UserCRUD" />
@@ -246,6 +224,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
+          <option name="contentProportion" value="0.026720649" />
           <treeState>
             <expand>
               <path>
@@ -254,8 +233,7 @@
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="@localhost: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -281,7 +259,7 @@
       <workItem from="1640620763494" duration="1920000" />
       <workItem from="1641124625956" duration="581000" />
       <workItem from="1641202110151" duration="591000" />
-      <workItem from="1641283784330" duration="5276000" />
+      <workItem from="1641283784330" duration="6851000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1641303831853</created>
@@ -290,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641303831853</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="second commit">
+      <created>1641304353785</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1641304353785</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +283,57 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="second commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1424" height="313" key="GridCell.Tab.0.bottom" timestamp="1641313538934">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1424" height="313" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1641313538934" />
+    <state width="1424" height="313" key="GridCell.Tab.0.center" timestamp="1641313538934">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1424" height="313" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1641313538934" />
+    <state width="1424" height="313" key="GridCell.Tab.0.left" timestamp="1641313538934">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1424" height="313" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1641313538934" />
+    <state width="1424" height="313" key="GridCell.Tab.0.right" timestamp="1641313538934">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1424" height="313" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1641313538934" />
+    <state width="1424" height="313" key="GridCell.Tab.1.bottom" timestamp="1641313538777">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1424" height="313" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1641313538777" />
+    <state width="1424" height="313" key="GridCell.Tab.1.center" timestamp="1641313538777">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1424" height="313" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1641313538777" />
+    <state width="1424" height="313" key="GridCell.Tab.1.left" timestamp="1641313538777">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1424" height="313" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1641313538777" />
+    <state width="1424" height="313" key="GridCell.Tab.1.right" timestamp="1641313538777">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1424" height="313" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1641313538777" />
+    <state width="1424" height="313" key="GridCell.Tab.2.bottom" timestamp="1641313538777">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1424" height="313" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1641313538777" />
+    <state width="1424" height="313" key="GridCell.Tab.2.center" timestamp="1641313538777">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1424" height="313" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1641313538777" />
+    <state width="1424" height="313" key="GridCell.Tab.2.left" timestamp="1641313538777">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1424" height="313" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1641313538777" />
+    <state width="1424" height="313" key="GridCell.Tab.2.right" timestamp="1641313538777">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1424" height="313" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1641313538777" />
   </component>
 </project>
