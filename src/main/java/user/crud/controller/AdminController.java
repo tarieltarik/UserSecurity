@@ -60,17 +60,34 @@ public class AdminController {
 
     @PostMapping(value = "/admin/edit")
     public String editUser(
-            @ModelAttribute("user") User u
-    ) {
-        User user = userService.getById(u.getId());
-        user.setName(u.getName());
-        user.setLastname(u.getLastname());
-        user.setAge(u.getAge());
-        user.setCity(u.getCity());
-        if (!u.getPassword().isEmpty()) {
-            user.setPassword(u.getPassword());
+            @ModelAttribute("id") Long id,
+            @ModelAttribute("name") String name,
+            @ModelAttribute("password") String password,
+            @ModelAttribute("lastname") String lastname,
+            @ModelAttribute("age") byte age,
+            @ModelAttribute("city") String city,
+            @RequestParam("roles") String[] roles
+    ){
+        User user = userService.getById(id);
+        user.setName(name);
+        user.setLastname(lastname);
+        user.setAge(age);
+        user.setCity(city);
+        if (!password.isEmpty()) {
+            user.setPassword(password);
         }
-        user.setRoles(u.getRoles());
+        Set<Role> Setroles = new HashSet<>();
+        for (String st : roles) {
+            if (st.equals("ADMIN")) {
+                Role role_admin = roleService.getRoleById(2L);
+                Setroles.add(role_admin);
+            }
+            if (st.equals("USER")) {
+                Role role_user = roleService.getRoleById(1L);
+                Setroles.add(role_user);
+            }
+        }
+        user.setRoles(Setroles);
         userService.save(user);
         return "redirect:/admin";
     }
