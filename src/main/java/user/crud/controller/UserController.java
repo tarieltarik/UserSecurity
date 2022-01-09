@@ -22,50 +22,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    /*
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView allUsers() {
-        List<User> users = userService.allUsers();
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-        modelAndView.addObject("usersList", users);
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public String addPage() {
-        return "addUser";
-    }
-
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute("user") User user) {
-        userService.save(user);
-        return "redirect:/";
-    }
-
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-    public ModelAndView editPage(@PathVariable("id") long id) {
-        User user = userService.getById(id);
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("editUser");
-        modelAndView.addObject("user", user);
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public String editUser(@ModelAttribute("user") User user) {
-        userService.save(user);
-        return "redirect:/";
-    }
-
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
-    public String deleteUser(@PathVariable("id") long id) {
-        User user = userService.getById(id);
-        userService.delete(user);
-        return "redirect:/";
-    }*/
-
-
     @GetMapping("/user")
     public ModelAndView showUser() {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -84,7 +40,4 @@ public class UserController {
     public String loginPage() {
         return "login";
     }
-
-
-
 }

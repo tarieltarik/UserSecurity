@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import user.crud.dao.RoleDAO;
 import user.crud.model.Role;
 import user.crud.model.User;
+import user.crud.userService.RoleService;
 import user.crud.userService.UserService;
 
 import java.util.HashSet;
@@ -18,15 +19,12 @@ import java.util.Set;
 @RequestMapping("/")
 public class AdminController {
     private final UserService userService;
-    private final RoleDAO roleDAO;
+    private final RoleService roleService;
 
     @Autowired
-    PasswordEncoder bCryptPasswordEncoder;
-
-    @Autowired
-    public AdminController(UserService userService, RoleDAO roleDAO) {
+    public AdminController(UserService userService, RoleService roleService) {
         this.userService = userService;
-        this.roleDAO = roleDAO;
+        this.roleService = roleService;
     }
 
     @GetMapping("/admin")
@@ -55,45 +53,24 @@ public class AdminController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("adminEditUser");
         modelAndView.addObject("user", user);
-        HashSet<Role> Setroles = new HashSet<>();
-        Role role_admin = roleDAO.createRoleIfNotFound("ADMIN", 1L);
-        Role role_user = roleDAO.createRoleIfNotFound("USER", 2L);
-        Setroles.add(role_admin);
-        Setroles.add(role_user);
+        List<Role> Setroles = roleService.getRolesList();
         modelAndView.addObject("rolelist", Setroles);
         return modelAndView;
     }
 
     @PostMapping(value = "/admin/edit")
     public String editUser(
-            @ModelAttribute("id") Long id,
-            @ModelAttribute("name") String name,
-            @ModelAttribute("password") String password,
-            @ModelAttribute("lastname") String lastname,
-            @ModelAttribute("age") byte age,
-            @ModelAttribute("city") String city,
-            @RequestParam("roles") String[] roles
+            @ModelAttribute("user") User u
     ) {
-        User user = userService.getById(id);
-        user.setName(name);
-        user.setLastname(lastname);
-        user.setAge(age);
-        user.setCity(city);
-        if (!password.isEmpty()) {
-            user.setPassword(password);
+        User user = userService.getById(u.getId());
+        user.setName(u.getName());
+        user.setLastname(u.getLastname());
+        user.setAge(u.getAge());
+        user.setCity(u.getCity());
+        if (!u.getPassword().isEmpty()) {
+            user.setPassword(u.getPassword());
         }
-        Set<Role> Setroles = new HashSet<>();
-        for (String st : roles) {
-            if (st.equals("ADMIN")) {
-                Role role_admin = roleDAO.createRoleIfNotFound("ADMIN", 1L);
-                Setroles.add(role_admin);
-            }
-            if (st.equals("USER")) {
-                Role role_user = roleDAO.createRoleIfNotFound("USER", 2L);
-                Setroles.add(role_user);
-            }
-        }
-        user.setRoles(Setroles);
+        user.setRoles(u.getRoles());
         userService.save(user);
         return "redirect:/admin";
     }
@@ -104,6 +81,4 @@ public class AdminController {
         userService.delete(user);
         return "redirect:/admin";
     }
-
-
 }

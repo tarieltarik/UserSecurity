@@ -1,7 +1,9 @@
 package user.crud.dao;
 
 
+import org.hibernate.Session;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import user.crud.model.Role;
 import user.crud.model.User;
@@ -9,9 +11,10 @@ import user.crud.model.User;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Component
-@Transactional
+@Repository
 public class RoleDAOImpl implements RoleDAO{
     @PersistenceContext
     private EntityManager entityManager;
@@ -19,45 +22,25 @@ public class RoleDAOImpl implements RoleDAO{
     public RoleDAOImpl() {
     }
 
-    @Transactional
     @Override
-    public void save(Role role) {
-        Role managed = entityManager.merge(role);
-        entityManager.persist(managed);
-    }
-
-    @Transactional
-    @Override
-    public void delete(Role role) {
-        Role managed = entityManager.merge(role);
-        entityManager.remove(managed);
-    }
-
-    @Override
-    public Role getById(Long id) {
-        return entityManager.find(Role.class, id );
-    }
-
-    @Override
-    public Role getRoleByName(String rolename) {
+    public List<Role> getRolesList() {
         try{
-            Role role = entityManager.createQuery("SELECT r FROM Role r where r.name = :name", Role.class)
-                    .setParameter("name", rolename)
+            List<Role> roles = entityManager.createQuery("SELECT r FROM Role r", Role.class).getResultList();
+            return roles;
+        } catch (NoResultException ex){
+            return null;
+        }
+    }
+
+    @Override
+    public Role getRoleById(Long id) {
+        try{
+            Role role = entityManager.createQuery("SELECT r FROM Role r where r.id = :id", Role.class)
+                    .setParameter("id", id)
                     .getSingleResult();
             return role;
         } catch (NoResultException ex){
             return null;
         }
     }
-
-    @Transactional
-    public Role createRoleIfNotFound(String name, long id) {
-        Role role = getRoleByName(name);
-        if (role == null) {
-            role = new Role(id, name);
-            save(role);
-        }
-        return role;
-    }
-
 }
