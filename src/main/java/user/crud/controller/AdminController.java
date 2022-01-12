@@ -40,6 +40,7 @@ public class AdminController {
     public ModelAndView addPage() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("addUser");
+        modelAndView.addObject("user", new User());
         List<Role> Setroles = roleService.getRolesList();
         modelAndView.addObject("rolelist", Setroles);
         return modelAndView;
