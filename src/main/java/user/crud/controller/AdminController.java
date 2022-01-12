@@ -48,7 +48,7 @@ public class AdminController {
     }
 
     @PostMapping(value = "/admin/add")
-    public String addUser(@Validated(User.class)@ModelAttribute("user") User user,
+    public String addUser(@ModelAttribute("user") User user,
                           @RequestParam("authorities") String[] roles) {
         Set<Role> Setroles = new HashSet<>();
         for (String st : roles) {
@@ -78,7 +78,7 @@ public class AdminController {
     }
 
     @PostMapping(value = "/admin/edit")
-    public String editUser(@Validated(User.class)@ModelAttribute("user") User user,
+    public String editUser(@ModelAttribute("user") User user,
                            @RequestParam("authorities") String[] roles){
         Set<Role> setroles = new HashSet<>();
         for (String st : roles) {

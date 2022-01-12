@@ -9,6 +9,8 @@ import user.crud.dao.RoleDAO;
 import user.crud.dao.UserDAO;
 import user.crud.model.User;
 import org.springframework.stereotype.Service;
+
+import javax.persistence.NoResultException;
 import java.util.List;
 
 @Service
@@ -55,5 +57,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     public UserDetails loadUserByUsername(String username) {
         User user = userDAO.getUserByName(username);
         return user;
+    }
+
+    @Override
+    public User getUserByName(String username) {
+        return userDAO.getUserByName(username);
     }
 }

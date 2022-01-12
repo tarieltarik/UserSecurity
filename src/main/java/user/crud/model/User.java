@@ -20,6 +20,7 @@ public class User implements UserDetails {
     private byte age;
     private String city;
     private String password;
+
     @ManyToMany(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
     @JoinTable(name = "t_users_t_role",
             joinColumns = @JoinColumn(name = "user_id"),
