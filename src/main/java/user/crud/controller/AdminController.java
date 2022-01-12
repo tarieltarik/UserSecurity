@@ -3,6 +3,7 @@ package user.crud.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import user.crud.dao.RoleDAO;
@@ -47,8 +48,8 @@ public class AdminController {
     }
 
     @PostMapping(value = "/admin/add")
-    public String addUser(@ModelAttribute("user") User user,
-                          @RequestParam("roles") String[] roles) {
+    public String addUser(@Validated(User.class)@ModelAttribute("user") User user,
+                          @RequestParam("authorities") String[] roles) {
         Set<Role> Setroles = new HashSet<>();
         for (String st : roles) {
             if (st.equals("ADMIN")) {
@@ -77,7 +78,8 @@ public class AdminController {
     }
 
     @PostMapping(value = "/admin/edit")
-    public String editUser(@ModelAttribute("user") User user, @RequestParam("roles") String[] roles){
+    public String editUser(@Validated(User.class)@ModelAttribute("user") User user,
+                           @RequestParam("authorities") String[] roles){
         Set<Role> setroles = new HashSet<>();
         for (String st : roles) {
             if (st.equals("ADMIN")) {
