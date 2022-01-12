@@ -37,12 +37,29 @@ public class AdminController {
     }
 
     @GetMapping(value = "/admin/add")
-    public String addPage() {
-        return "addUser";
+    public ModelAndView addPage() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("addUser");
+        List<Role> Setroles = roleService.getRolesList();
+        modelAndView.addObject("rolelist", Setroles);
+        return modelAndView;
     }
 
     @PostMapping(value = "/admin/add")
-    public String addUser(@ModelAttribute("user") User user) {
+    public String addUser(@ModelAttribute("user") User user,
+                          @RequestParam("roles") String[] roles) {
+        Set<Role> Setroles = new HashSet<>();
+        for (String st : roles) {
+            if (st.equals("ADMIN")) {
+                Role role_admin = roleService.getRoleById(2L);
+                Setroles.add(role_admin);
+            }
+            if (st.equals("USER")) {
+                Role role_user = roleService.getRoleById(1L);
+                Setroles.add(role_user);
+            }
+        }
+        user.setRoles(Setroles);
         userService.save(user);
         return "redirect:/admin";
     }
@@ -59,35 +76,19 @@ public class AdminController {
     }
 
     @PostMapping(value = "/admin/edit")
-    public String editUser(
-            @ModelAttribute("id") Long id,
-            @ModelAttribute("name") String name,
-            @ModelAttribute("password") String password,
-            @ModelAttribute("lastname") String lastname,
-            @ModelAttribute("age") byte age,
-            @ModelAttribute("city") String city,
-            @RequestParam("roles") String[] roles
-    ){
-        User user = userService.getById(id);
-        user.setName(name);
-        user.setLastname(lastname);
-        user.setAge(age);
-        user.setCity(city);
-        if (!password.isEmpty()) {
-            user.setPassword(password);
-        }
-        Set<Role> Setroles = new HashSet<>();
+    public String editUser(@ModelAttribute("user") User user, @RequestParam("roles") String[] roles){
+        Set<Role> setroles = new HashSet<>();
         for (String st : roles) {
             if (st.equals("ADMIN")) {
                 Role role_admin = roleService.getRoleById(2L);
-                Setroles.add(role_admin);
+                setroles.add(role_admin);
             }
             if (st.equals("USER")) {
                 Role role_user = roleService.getRoleById(1L);
-                Setroles.add(role_user);
+                setroles.add(role_user);
             }
         }
-        user.setRoles(Setroles);
+        user.setRoles(setroles);
         userService.save(user);
         return "redirect:/admin";
     }

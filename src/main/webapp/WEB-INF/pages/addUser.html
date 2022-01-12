@@ -17,11 +17,17 @@
     <p><input type="number" id="age" name="age"></p>
     <p><label for="city">city</label></p>
     <p><input type="text" id="city" name="city"></p>
-
     <p>
         <input type="submit" value="add">
     </p>
+    <ul>
+        <li th:each="role : ${rolelist}">
+            <input type="checkbox" name="roles" th:field="*{roles}" th:value="${role}"
+                   th:text="${role.getName()}" />
+        </li>
+    </ul>
 </form>
+
 <p>
 <form th:action="@{/logout}" method="post">
     <input type="submit" value="logout"/>

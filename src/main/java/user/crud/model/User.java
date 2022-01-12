@@ -84,13 +84,6 @@ public class User implements UserDetails {
         this.id = id;
     }
 
-    public User(String name, String lastname, byte age, String city) {
-        this.name = name;
-        this.lastname = lastname;
-        this.age = age;
-        this.city = city;
-    }
-
     public String getName() {
         return name;
     }
