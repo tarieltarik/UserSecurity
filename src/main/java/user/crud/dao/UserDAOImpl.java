@@ -43,6 +43,12 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    public void deleteById(Long id){
+        User user = entityManager.find(User.class, id);
+        entityManager.remove(user);
+    }
+
+    @Override
     public User getUserByName(String username) {
         try {
             User user = entityManager.createQuery("SELECT u FROM User u where u.name = :name", User.class)
